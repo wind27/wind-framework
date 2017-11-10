@@ -7,6 +7,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
@@ -58,6 +59,7 @@ public class MybatisConfig {
             fb.setTypeAliasesPackage(env.getProperty("mybatis.typeAliasesPackage"));//指定基包
             fb.setMapperLocations(new PathMatchingResourcePatternResolver()
                     .getResources(env.getProperty("mybatis.mapperLocations")));//指定xml文件位置
+            fb.setConfigLocation(new ClassPathResource("mybatis-config.xml"));//指定mybatis配置
             return fb.getObject().openSession();
         } catch (Exception e) {
             e.printStackTrace();

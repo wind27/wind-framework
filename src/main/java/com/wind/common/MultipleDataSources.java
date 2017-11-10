@@ -43,12 +43,16 @@ public class MultipleDataSources {
                         mybatisConfig = (MybatisConfig) SpringApplicationContextAware.getBean("mybatisConfig");
                     }
                     sqlSession = mybatisConfig.createSqlSession(dbName);
+
+
                 }
                 if(sqlSession==null) {
                     logger.error(dao.getClass().getName() + " can not find database : "+ dbName);
                     return false;
                 } else {
+                    sqlSessionMap.put(dbName, sqlSession);
                     dao.setSqlSession(sqlSession);
+
                 }
             }
         }
