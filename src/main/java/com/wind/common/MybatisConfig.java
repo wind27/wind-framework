@@ -28,16 +28,17 @@ public class MybatisConfig {
 
     /**
      * 获取数据源
+     *
      * @param dbName 数据库库名
      * @return 返回 dataSource
      */
     private DataSource getDataSource(String dbName) {
         try {
             Properties userDatabaseProp = new Properties();
-            userDatabaseProp.put("driverClassName", env.getProperty(dbName+".jdbc.driverClassName"));
-            userDatabaseProp.put("url", env.getProperty(dbName+".jdbc.url"));
-            userDatabaseProp.put("username", env.getProperty(dbName+".jdbc.username"));
-            userDatabaseProp.put("password", env.getProperty(dbName+".jdbc.password"));
+            userDatabaseProp.put("driverClassName", env.getProperty(dbName + ".jdbc.driverClassName"));
+            userDatabaseProp.put("url", env.getProperty(dbName + ".jdbc.url"));
+            userDatabaseProp.put("username", env.getProperty(dbName + ".jdbc.username"));
+            userDatabaseProp.put("password", env.getProperty(dbName + ".jdbc.password"));
             return DruidDataSourceFactory.createDataSource(userDatabaseProp);
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,6 +48,7 @@ public class MybatisConfig {
 
     /**
      * 获取 sqlSession
+     *
      * @param dbName 数据库库名
      * @return 返回 sqlSession
      */
@@ -59,7 +61,7 @@ public class MybatisConfig {
             fb.setTypeAliasesPackage(env.getProperty("mybatis.typeAliasesPackage"));//指定基包
             fb.setMapperLocations(new PathMatchingResourcePatternResolver()
                     .getResources(env.getProperty("mybatis.mapperLocations")));//指定xml文件位置
-            fb.setConfigLocation(new ClassPathResource("mybatis-config.xml"));//指定mybatis配置
+//            fb.setConfigLocation(new ClassPathResource("mybatis-config.xml"));//指定mybatis配置
             return fb.getObject().openSession();
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,6 +72,7 @@ public class MybatisConfig {
 
     /**
      * 创建 sqlSession
+     *
      * @param dbName 数据库库名
      * @return 返回 sqlSession
      */
