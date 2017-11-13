@@ -4,6 +4,8 @@ import com.alibaba.druid.pool.DruidDataSourceFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -23,6 +25,8 @@ import java.util.Properties;
 @MapperScan(basePackages = "com.wind.*.model")
 public class MybatisConfig {
 
+    private static Logger logger = LoggerFactory.getLogger(MybatisConfig.class);
+
     @Autowired
     private Environment env;
 
@@ -41,7 +45,7 @@ public class MybatisConfig {
             userDatabaseProp.put("password", env.getProperty(dbName + ".jdbc.password"));
             return DruidDataSourceFactory.createDataSource(userDatabaseProp);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("[mybatis 配置] 创建 DataSource 异常= {}", e);
             return null;
         }
     }
@@ -64,7 +68,7 @@ public class MybatisConfig {
 //            fb.setConfigLocation(new ClassPathResource("mybatis-config.xml"));//指定mybatis配置
             return fb.getObject().openSession();
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("[mybatis 配置] 创建 sqlSession 异常= {}", e);
             return null;
         }
 
