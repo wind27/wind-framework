@@ -69,6 +69,7 @@ public class MybatisConfig {
 //            SqlSession sqlSession = fb.getObject().openSession();
 //            sqlSession.getMapper()
 //            fb.setConfigLocation(new ClassPathResource("mybatis-config.xml"));//指定mybatis配置
+
             return fb.getObject().openSession();
         } catch (Exception e) {
             logger.error("[mybatis 配置] 创建 sqlSession 异常= {}", e);
