@@ -14,7 +14,7 @@ import java.util.Set;
  *
  * @author qianchun 17/7/24
  **/
-@Component
+//@Component
 public class SpringApplicationContextAware implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
 

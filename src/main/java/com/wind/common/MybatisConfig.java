@@ -3,14 +3,10 @@ package com.wind.common;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -21,8 +17,8 @@ import java.util.Properties;
  * @author qianchun 17/7/18
  **/
 
-@Configuration
-@MapperScan(basePackages = "com.wind.*.model")
+//@Configuration
+//@MapperScan(basePackages = "com.wind.*.model")
 public class MybatisConfig {
 
     private static Logger logger = LoggerFactory.getLogger(MybatisConfig.class);
