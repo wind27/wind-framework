@@ -12,6 +12,7 @@ public enum  ErrorCode {
     SYS_ERROR(          2,  "sys_error"),
     PARAM_ERROR(        3,  "param_error"),
     NO_PREMISSION(      4,  "no_premission"),
+    NOT_EXIST(          5,  "not_exist"),
     ERROR(              -1,  "error");
 
 

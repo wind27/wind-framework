@@ -25,6 +25,13 @@ public class JsonResponseUtil {
         return result.toString();
     }
 
+    public static String fail() {
+        JSONObject result = new JSONObject();
+        result.put("code", ErrorCode.FAIL.getValue());
+        result.put("msg", ErrorCode.FAIL.getName());
+        return result.toString();
+    }
+
     public static String fail(ErrorCode errorCode) {
         JSONObject result = new JSONObject();
         result.put("code", errorCode.getValue());
