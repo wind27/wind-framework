@@ -13,6 +13,7 @@ public enum  ErrorCode {
     PARAM_ERROR(        3,  "param_error"),
     NO_PREMISSION(      4,  "no_premission"),
     NOT_EXIST(          5,  "not_exist"),
+    DISABLED(           6,  "disabled"),
     ERROR(              -1,  "error");
 
 
