@@ -86,6 +86,9 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+    </build>
     <!--<build>
         <defaultGoal>compile</defaultGoal>
         <plugins>
