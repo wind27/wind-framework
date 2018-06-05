@@ -87,7 +87,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
+        <finalName>${project.artifactId}</finalName>
     </build>
     <!--<build>
         <defaultGoal>compile</defaultGoal>
