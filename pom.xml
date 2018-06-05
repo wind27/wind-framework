@@ -17,6 +17,7 @@
         <snapshotRepository>
             <id>maven-snapshots</id>
             <url>http://nexus-3.2.0:8081/repository/maven-snapshots/</url>
+            <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
 
@@ -86,9 +87,6 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <finalName>${project.artifactId}</finalName>
-    </build>
     <!--<build>
         <defaultGoal>compile</defaultGoal>
         <plugins>
