@@ -87,7 +87,7 @@
         </dependency>
     </dependencies>
 
-    <!--<build>
+    <build>
         <defaultGoal>compile</defaultGoal>
         <plugins>
             <plugin>
@@ -99,10 +99,13 @@
                         <manifestEntries>
                             <Rose>*</Rose>
                         </manifestEntries>
+                        <manifest>
+                            <useUniqueVersions>false</useUniqueVersions>
+                        </manifest>
                     </archive>
                 </configuration>
             </plugin>
 
         </plugins>
-    </build>-->
+    </build>
 </project>
