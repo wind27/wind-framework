@@ -95,11 +95,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <finalName>no-version</finalName>
                     <archive>
-                        <manifestEntries>
-                            <Rose>*</Rose>
-                        </manifestEntries>
                         <manifest>
                             <useUniqueVersions>false</useUniqueVersions>
                         </manifest>
